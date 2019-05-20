@@ -55,5 +55,5 @@ Build own Docker Image with:
 
 or test natively with:
 
-  npm install
-  node index.js --help
+    npm install
+    node index.js --help
