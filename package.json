@@ -1,0 +1,25 @@
+{
+  "name": "scip_mqtt",
+  "version": "0.0.1",
+  "description": "MQTT bridge for a Digital Signage Displays using the LAN -> RS232 / SICP (Serial Interface Communication Protocol)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dersimn/sicp_mqtt.git"
+  },
+  "author": "Simon Christmann <simon@christmann.email>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dersimn/sicp_mqtt/issues"
+  },
+  "homepage": "https://github.com/dersimn/sicp_mqtt#readme",
+  "dependencies": {
+    "mqtt-smarthome-connect": "0.0.7",
+    "yalm": "^4.1.0",
+    "yargs": "^13.2.4",
+    "yetanothertimerlibrary": "^3.1.1"
+  }
+}

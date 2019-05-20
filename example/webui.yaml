@@ -1,0 +1,70 @@
+---
+pages:
+  - pageid: mainpage
+    pageicon: icons/tv.png
+    pagetitle: WaLowerLeft of TV
+    sections:
+      - sectiontitle: Power
+        items:
+          - title: Upper-Left  
+            type: switch
+            topic: scip//UpLeft/power
+          - title: Upper-Right  
+            type: switch
+            topic: scip//UpRight/power
+          - title: Lower-Left  
+            type: switch
+            topic: scip//LowerLeft/power
+          - title: Lower-Right  
+            type: switch
+            topic: scip//LowerRight/power
+      - sectiontitle: Input
+        items:
+          - title: Upper-Left
+            topic: scip//UpLeft/input
+            type: select
+            selectOptions:
+              - label: 'HDMI 1'
+                value: 'HDMI1'
+              - label: 'HDMI 2'
+                value: 'HDMI2'
+              - label: 'DVI'
+                value: 'DVI'
+              - label: 'Browser'
+                value: 'BROWSER'
+          - title: Upper-Right
+            topic: scip//UpRight/input
+            type: select
+            selectOptions:
+              - label: 'HDMI 1'
+                value: 'HDMI1'
+              - label: 'HDMI 2'
+                value: 'HDMI2'
+              - label: 'DVI'
+                value: 'DVI'
+              - label: 'Browser'
+                value: 'BROWSER'
+          - title: Lower-Left
+            topic: scip//LowerLeft/input
+            type: select
+            selectOptions:
+              - label: 'HDMI 1'
+                value: 'HDMI1'
+              - label: 'HDMI 2'
+                value: 'HDMI2'
+              - label: 'DVI'
+                value: 'DVI'
+              - label: 'Browser'
+                value: 'BROWSER'
+          - title: Lower-Right
+            topic: scip//LowerRight/input
+            type: select
+            selectOptions:
+              - label: 'HDMI 1'
+                value: 'HDMI1'
+              - label: 'HDMI 2'
+                value: 'HDMI2'
+              - label: 'DVI'
+                value: 'DVI'
+              - label: 'Browser'
+                value: 'BROWSER'

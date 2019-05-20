@@ -1,0 +1,80 @@
+version: '3'
+
+services:
+  # -------------------------------------------------------------------------------------
+  # MQTT
+  # -------------------------------------------------------------------------------------
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+  # -------------------------------------------------------------------------------------
+  # Admin
+  # -------------------------------------------------------------------------------------
+  admin:
+    image: dersimn/mqtt-admin
+    depends_on:
+      - mqtt
+    ports:
+      - 8001:80
+    environment:
+      - MQTT_HOST=mqtt:9001
+  # -------------------------------------------------------------------------------------
+  # Web UI
+  # -------------------------------------------------------------------------------------
+  webui:
+    image: dersimn/mqtt-smarthome-webui
+    depends_on:
+      - mqtt
+    ports:
+      - 8000:80
+    environment:
+      - MQTT_HOST=mqtt:9001
+    volumes:
+      - ./webui.yaml:/www/data.yaml:ro
+  # -------------------------------------------------------------------------------------
+  # TVs
+  # -------------------------------------------------------------------------------------
+  display_1:
+    image: dersimn/sicp_mqtt
+    depends_on:
+      - mqtt
+    restart: always
+    environment:
+      - SICP_TV_ID=1
+      - SICP_TV_NAME=UpLeft
+      - SICP_TV_ADDRESS=192.168.10.231
+      - SICP_MQTT_URL=mqtt://mqtt
+  display_2:
+    image: dersimn/sicp_mqtt
+    depends_on:
+      - mqtt
+    restart: always
+    environment:
+      - SICP_TV_ID=2
+      - SICP_TV_NAME=UpRight
+      - SICP_TV_ADDRESS=192.168.10.232
+      - SICP_MQTT_URL=mqtt://mqtt
+  display_3:
+    image: dersimn/sicp_mqtt
+    depends_on:
+      - mqtt
+    restart: always
+    environment:
+      - SICP_TV_ID=3
+      - SICP_TV_NAME=LowerLeft
+      - SICP_TV_ADDRESS=192.168.10.233
+      - SICP_MQTT_URL=mqtt://mqtt
+  display_4:
+    image: dersimn/sicp_mqtt
+    depends_on:
+      - mqtt
+    restart: always
+    environment:
+      - SICP_TV_ID=4
+      - SICP_TV_NAME=LowerRight
+      - SICP_TV_ADDRESS=192.168.10.234
+      - SICP_MQTT_URL=mqtt://mqtt
